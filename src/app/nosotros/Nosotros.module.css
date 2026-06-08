@@ -1,0 +1,326 @@
+.main {
+  background: var(--background);
+}
+
+/* Hero Header */
+.hero {
+  background: linear-gradient(135deg, #111a2e 0%, #1a2436 100%);
+  padding: 6rem 0 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.breadcrumbs {
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  transition: color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.breadcrumbLink:hover {
+  color: #ffffff;
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #94a3b8;
+  max-width: 750px;
+  line-height: 1.7;
+}
+
+/* Misión & Visión Section */
+.missionVisionSection {
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+.gridSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.cardInfo {
+  position: relative;
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.4s, border-color 0.4s;
+}
+
+.cardInfo:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.accentLinePrimary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary);
+}
+
+.accentLineAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--primary-light));
+}
+
+.cardLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 1.25rem;
+}
+
+.cardText {
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* Objetivos Section */
+.objectivesSection {
+  background: var(--secondary);
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+}
+
+.objectivesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.objCard {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.objCard:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(35, 172, 226, 0.08);
+  transform: translateY(-4px);
+}
+
+.objIconWrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 0;
+  background: var(--secondary);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s;
+}
+
+.objCard:hover .objIconWrapper {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.objTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+}
+
+.objDesc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Políticas Section */
+.policiesSection {
+  background: var(--background);
+  border-top: 1px solid var(--border);
+}
+
+.policiesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.policyCard {
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  padding: 3rem 2.5rem;
+  height: 100%;
+  transition: all 0.4s ease;
+}
+
+.policyCard:hover {
+  border-color: var(--primary);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.policyHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.policyIconWrapperQuality {
+  width: 52px;
+  height: 52px;
+  background: rgba(35, 172, 226, 0.08);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policyIconQuality {
+  stroke-width: 2px;
+}
+
+.policyIconWrapperEnv {
+  width: 52px;
+  height: 52px;
+  background: rgba(16, 185, 129, 0.08);
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policyIconEnv {
+  stroke-width: 2px;
+}
+
+.policyTitle {
+  font-size: 1.4rem;
+  font-weight: 850;
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.policySubtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.policyText {
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.policyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.policyList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  margin-top: 9px;
+  flex-shrink: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .gridSplit, .policiesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .objectivesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .objectivesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cardInfo, .policyCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .policyHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

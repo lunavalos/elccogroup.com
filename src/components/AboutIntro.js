@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from "./AboutIntro.module.css";
 
 const clientLogos = [
@@ -70,6 +71,23 @@ export default function AboutIntro() {
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
+          <div className={styles.founderCard}>
+            <div className={styles.founderImageWrapper}>
+              <Image
+                src="/images/francisco-octavio-diaz-vadillo.webp"
+                alt="Francisco Octavio Díaz Vadillo"
+                fill
+                sizes="(max-width: 900px) 100vw, 40vw"
+                className={styles.founderImage}
+                priority
+              />
+            </div>
+            <div className={styles.founderInfo}>
+              <h4 className={styles.founderName}>Francisco Octavio Díaz Vadillo (†)</h4>
+              <p className={styles.founderTitle}>Fundador de ELCCO Group</p>
+            </div>
+          </div>
+
           <div className={styles.visualCard}>
             <div className={styles.visualAccent}></div>
             <div className={styles.visualContent}>

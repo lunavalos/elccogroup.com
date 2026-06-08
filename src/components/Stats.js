@@ -5,29 +5,29 @@ import { Shield, Award, Calendar, MapPin } from "lucide-react";
 import styles from "./Stats.module.css";
 
 const stats = [
-  { 
-    icon: Calendar, 
-    value: "40+", 
-    label: "Años de Experiencia", 
-    desc: "Trayectoria sólida liderando proyectos de infraestructura y automatización industrial." 
+  {
+    icon: Calendar,
+    value: "40+",
+    label: "Años de Experiencia",
+    desc: "Trayectoria sólida liderando proyectos de infraestructura y automatización industrial."
   },
-  { 
-    icon: Shield, 
-    value: "500+", 
-    label: "Proyectos Completados", 
-    desc: "Obras de gran escala ejecutadas con los más altos estándares de calidad y seguridad." 
+  {
+    icon: Shield,
+    value: "500+",
+    label: "Proyectos Completados",
+    desc: "Obras de gran escala ejecutadas con los más altos estándares de calidad y seguridad."
   },
-  { 
-    icon: MapPin, 
-    value: "3", 
-    label: "Ubicaciones en México", 
-    desc: "Presencia estratégica para atender con agilidad y cercanía a la industria automotriz." 
+  {
+    icon: MapPin,
+    value: "5",
+    label: "Ubicaciones en México",
+    desc: "Presencia estratégica para atender con agilidad y cercanía a todo México."
   },
-  { 
-    icon: Award, 
-    value: "100%", 
-    label: "Compromiso de Calidad", 
-    desc: "Procesos rigurosos y certificaciones que garantizan el éxito en cada desarrollo." 
+  {
+    icon: Award,
+    value: "100%",
+    label: "Compromiso de Calidad",
+    desc: "Procesos rigurosos y certificaciones que garantizan el éxito en cada desarrollo."
   },
 ];
 
@@ -52,11 +52,11 @@ function AnimatedNumber({ value, trigger }) {
     const updateNumber = (now) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
+
       // Ease out cubic
       const easeProgress = 1 - Math.pow(1 - progress, 3);
       const current = Math.floor(easeProgress * target);
-      
+
       setDisplayValue(`${current}${suffix}`);
 
       if (progress < 1) {

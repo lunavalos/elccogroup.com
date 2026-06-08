@@ -204,3 +204,67 @@
     height: 50px;
   }
 }
+
+/* Founder Card Styling */
+.founderCard {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.founderCard:hover {
+  border-color: var(--primary);
+  box-shadow: 0 12px 40px rgba(26, 58, 92, 0.08);
+}
+
+.founderImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background: var(--secondary);
+}
+
+.founderImage {
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.founderCard:hover .founderImage {
+  transform: scale(1.04);
+}
+
+.founderInfo {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border);
+  transition: border-color 0.4s;
+}
+
+.founderCard:hover .founderInfo {
+  border-color: var(--primary);
+}
+
+.founderName {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin: 0 0 0.25rem 0;
+}
+
+.founderTitle {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+  .founderImageWrapper {
+    height: 280px;
+  }
+}
