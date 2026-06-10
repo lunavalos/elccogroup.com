@@ -1,0 +1,438 @@
+.main {
+  background: var(--background);
+}
+
+/* Hero Header */
+.hero {
+  background: #111a2e;
+  padding: 12rem 0 7rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 9.5rem 0 5rem 0;
+  }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.breadcrumbs {
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  transition: color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.breadcrumbLink:hover {
+  color: #ffffff;
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #94a3b8;
+  max-width: 750px;
+  line-height: 1.7;
+}
+
+/* Layout Section */
+.contentSection {
+  background: var(--background);
+}
+
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 4.5rem;
+  align-items: start;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebarNav {
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sidebarTitle {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+}
+
+.sidebarLink {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s;
+  border-left: 3px solid transparent;
+}
+
+.sidebarLink:hover {
+  color: var(--primary);
+  background: rgba(35, 172, 226, 0.04);
+  border-left-color: var(--primary-light);
+  padding-left: 1.25rem;
+}
+
+.sidebarLinkActive {
+  color: var(--primary-dark);
+  background: rgba(35, 172, 226, 0.08);
+  border-left-color: var(--primary);
+  font-weight: 750;
+  padding-left: 1.25rem;
+}
+
+.sidebarContactCard {
+  background: linear-gradient(135deg, #111a2e 0%, #1a2436 100%);
+  border: 1px solid var(--border);
+  padding: 2.25rem 2rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebarContactCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.sidebarContactTitle {
+  font-size: 1.2rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.sidebarContactDesc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.sidebarContactBtn {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transform: skewX(-10deg);
+  border: none;
+  cursor: pointer;
+}
+
+.sidebarContactBtn > * {
+  transform: skewX(10deg);
+}
+
+.sidebarContactBtn:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px) skewX(-10deg);
+  box-shadow: 0 5px 15px rgba(35, 172, 226, 0.3);
+}
+
+/* Main Content Area */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.descriptionText {
+  font-size: 1.15rem;
+  color: var(--foreground);
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.contentBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.6rem;
+  font-weight: 850;
+  color: var(--foreground);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+}
+
+/* Specialties Grid */
+.specialtiesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.specialtyCard {
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.specialtyCard:hover {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(35, 172, 226, 0.05);
+  transform: translateY(-2px);
+}
+
+.specialtyNumber {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--primary);
+  background: rgba(35, 172, 226, 0.08);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.specialtyCard:hover .specialtyNumber {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.specialtyText {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--foreground);
+  line-height: 1.45;
+}
+
+/* Benefits list */
+.benefitsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.benefitIconWrapper {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.benefitItem:hover .benefitIconWrapper {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.benefitTextWrapper {
+  flex: 1;
+}
+
+.benefitTitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 0.35rem;
+}
+
+.benefitDesc {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .splitLayout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  
+  .sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sidebarNav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1.25rem;
+  }
+  
+  .sidebarTitle {
+    flex: 1 1 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebarLink {
+    flex: 1 1 calc(50% - 0.5rem);
+    justify-content: center;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    text-align: center;
+  }
+  
+  .sidebarLink:hover {
+    border-left-color: transparent;
+    border-bottom-color: var(--primary-light);
+    padding-left: 1rem;
+  }
+  
+  .sidebarLinkActive {
+    border-left-color: transparent;
+    border-bottom-color: var(--primary);
+    padding-left: 1rem;
+  }
+  
+  .sidebarContactCard {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageWrapper {
+    height: 280px;
+  }
+  
+  .specialtiesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .sidebarLink {
+    flex: 1 1 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp1 {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fadeInUp2 {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+.fadeInUp3 {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+.fadeInUp4 {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  opacity: 0;
+}

@@ -1,49 +1,74 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { 
-  Shield, 
-  Award, 
-  Handshake, 
-  Smile, 
-  MessageSquare, 
-  Users, 
-  Leaf, 
+import {
+  Handshake,
+  TrendingUp,
+  Trophy,
+  Globe,
   CheckCircle,
-  ArrowLeft
+  Leaf,
+  ArrowLeft,
+  Shield,
+  MessageSquare,
+  Smile,
+  Users
 } from "lucide-react";
 import styles from "./Nosotros.module.css";
 
 const objectives = [
   {
-    icon: Shield,
-    title: "Seguridad",
-    desc: "La integridad física de nuestros colaboradores y clientes es la prioridad absoluta en cada obra e instalación.",
-  },
-  {
-    icon: Award,
-    title: "Calidad",
-    desc: "Diseñamos y ejecutamos proyectos robustos que cumplen con los más altos estándares internacionales y de la industria automotriz.",
-  },
-  {
     icon: Handshake,
     title: "Compromiso",
-    desc: "Asumimos con total responsabilidad cada contrato, garantizando el cumplimiento en tiempo, presupuesto y forma.",
+    desc: "Contar con talento comprometido, crecimiento sostenible y liderazgo en conjunto.",
   },
   {
-    icon: Smile,
-    title: "Actitud Positiva",
-    desc: "Afrontamos los retos técnicos y operativos con entusiasmo y con un enfoque constructivo orientado a la solución.",
+    icon: TrendingUp,
+    title: "Crecimiento",
+    desc: "Diversificar clientes, expandir mercados, asegurar el crecimiento de la empresa.",
+  },
+  {
+    icon: Trophy,
+    title: "Excelencia",
+    desc: "Tener excelencia constructiva con procesos sólidos que generan confianza y resultados.",
+  },
+  {
+    icon: Globe,
+    title: "Expansión",
+    desc: "Tener rentabilidad en crecimiento, conquistar y expandirnos hacia nuevos horizontes y mercados.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Calidad",
+    desc: "Ser excelentes y disciplinados diariamente para garantizar el cumplimiento de cada proyecto con cero retrabajos.",
+  },
+];
+
+const values = [
+  {
+    icon: Shield,
+    title: "Seguridad y Calidad",
+    desc: "Priorizamos la integridad de nuestro equipo y la excelencia técnica en cada obra.",
   },
   {
     icon: MessageSquare,
     title: "Comunicación",
-    desc: "Fomentamos canales de comunicación transparentes, continuos y claros con nuestros clientes y entre nuestros equipos.",
+    desc: "Fomentamos la transparencia, claridad y retroalimentación constante con nuestros socios.",
+  },
+  {
+    icon: Smile,
+    title: "Actitud Positiva",
+    desc: "Enfrentamos cada reto con entusiasmo y un enfoque constructivo hacia las soluciones.",
+  },
+  {
+    icon: Handshake,
+    title: "Compromiso",
+    desc: "Asumimos con total responsabilidad cada proyecto y entregamos resultados de valor.",
   },
   {
     icon: Users,
     title: "Integración",
-    desc: "Sinergia interna y alineación de objetivos para que la fuerza de trabajo colabore de manera unificada y exitosa.",
+    desc: "Promovemos el trabajo en equipo y la colaboración unificada para el éxito compartido.",
   },
 ];
 
@@ -63,7 +88,7 @@ export default function NosotrosPage() {
               <ArrowLeft size={14} /> Volver a Inicio
             </Link>
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -99,7 +124,7 @@ export default function NosotrosPage() {
               <span className={styles.cardLabel}>Propósito</span>
               <h2 className={styles.cardTitle}>Nuestra Misión</h2>
               <p className={styles.cardText}>
-                En <strong>ELCCO Group</strong> estamos comprometidos en ofrecer proyectos para la industria con calidad y seguridad; manteniendo una integración entre los colaboradores con la mejor actitud para lograr el éxito de cada proyecto cuidando el medio ambiente.
+                Ejecutar proyectos de construcción y nuevos negocios, con excelencia operativa, calidad total y disciplina en costo, tiempo y seguridad, generando valor constante para nuestros clientes y socios mediante procesos sólidos, talento humano altamente capacitado y una cultura de mejora continua que genere confianza y seguridad cuidando el medio ambiente.
               </p>
             </motion.div>
 
@@ -115,9 +140,41 @@ export default function NosotrosPage() {
               <span className={styles.cardLabel}>Futuro</span>
               <h2 className={styles.cardTitle}>Nuestra Visión</h2>
               <p className={styles.cardText}>
-                Ser una empresa líder, con permanencia en el mercado, reconocidos por el talento y profesionalismo de nuestra gente, garantizando seguridad y calidad a todas las partes interesadas, aplicando la mejora continua en nuestros procesos, productos y servicios, comprometidos con la sociedad y el medio ambiente con un alto sentido humano.
+                Ser un corporativo líder en construcción y proyectos innovadores, conquistando nuevos mercados siempre distinguidos por su ejecución impecable, crecimiento rentable y disciplina operativa, basada en talento capacitado, procesos sólidos con la confianza y seguridad para nuestros clientes y partes interesadas.
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Valores Section */}
+      <section className={`section ${styles.valuesSection}`}>
+        <div className="container">
+          <div className={styles.sectionHeaderCentered}>
+            <span className="sectionLabel">Nuestra Cultura</span>
+            <h2 className="sectionTitle">Nuestros Valores</h2>
+            <p className="sectionDescription">
+              Los pilares éticos y de colaboración que definen el actuar diario en todos nuestros proyectos.
+            </p>
+          </div>
+
+          <div className={styles.valuesGrid}>
+            {values.map((val, i) => (
+              <motion.div
+                key={val.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className={styles.valueCard}
+              >
+                <div className={styles.valueIconWrapper}>
+                  <val.icon size={24} className={styles.valueIcon} />
+                </div>
+                <h3 className={styles.valueTitle}>{val.title}</h3>
+                <p className={styles.valueDesc}>{val.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -188,12 +245,34 @@ export default function NosotrosPage() {
               </p>
             </motion.div>
 
+            {/* Política de Seguridad */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className={styles.policyCard}
+            >
+              <div className={styles.policyHeader}>
+                <div className={styles.policyIconWrapperSafety}>
+                  <Shield size={24} className={styles.policyIconSafety} />
+                </div>
+                <div>
+                  <h3 className={styles.policyTitle}>Política de Seguridad</h3>
+                  <span className={styles.policySubtitle}>Protección e Integridad</span>
+                </div>
+              </div>
+              <p className={styles.policyText}>
+                En <strong>ELCCO Group</strong> nuestro compromiso es preservar la <strong>seguridad e integridad de nuestros colaboradores y socios de negocio</strong>, siendo cada uno responsables de cumplir con los estándares aplicables en materia de seguridad, salud y medio ambiente, a través de prácticas seguras y una concientización y capacitación continua.
+              </p>
+            </motion.div>
+
             {/* Política Ambiental */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.15 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className={styles.policyCard}
             >
               <div className={styles.policyHeader}>
