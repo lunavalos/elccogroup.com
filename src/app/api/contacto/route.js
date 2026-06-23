@@ -14,9 +14,20 @@ export async function POST(request) {
       );
     }
 
+    // Validar que las variables de entorno estén presentes
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD || !process.env.EMAIL_TO || !process.env.EMAIL_FROM) {
+      console.error("Faltan variables de entorno en el servidor para configurar el correo.");
+      return NextResponse.json(
+        { error: "Error de configuración de correo en el servidor. Asegúrate de configurar las Variables de Entorno en el hosting." },
+        { status: 500 }
+      );
+    }
+
     // Configuración del transportador de correo usando SMTP de Gmail
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // true para puerto 465
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
