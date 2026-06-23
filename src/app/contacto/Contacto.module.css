@@ -346,6 +346,16 @@
   transform: translateX(4px);
 }
 
+.errorMessage {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
 /* Success Screen overlay */
 .successScreen {
   position: absolute;

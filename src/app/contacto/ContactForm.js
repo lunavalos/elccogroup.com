@@ -30,6 +30,7 @@ export default function ContactForm() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     if (serviceParam) {
@@ -45,12 +46,29 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMsg("");
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1200));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
+    try {
+      const response = await fetch("/api/contacto", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setErrorMsg(data.error || "Ocurrió un error al enviar tu mensaje. Por favor, inténtalo de nuevo.");
+      }
+    } catch (err) {
+      setErrorMsg("No se pudo conectar con el servidor. Por favor, verifica tu conexión e intenta nuevamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -63,6 +81,7 @@ export default function ContactForm() {
       mensaje: ""
     });
     setSubmitted(false);
+    setErrorMsg("");
   };
 
   if (submitted) {
@@ -169,6 +188,12 @@ export default function ContactForm() {
           placeholder="Escribe aquí los detalles de tu proyecto o consulta..."
         />
       </div>
+
+      {errorMsg && (
+        <div className={styles.errorMessage}>
+          {errorMsg}
+        </div>
+      )}
 
       <button type="submit" disabled={isSubmitting} className={styles.submitBtn}>
         <span>
