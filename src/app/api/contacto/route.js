@@ -92,7 +92,7 @@ ${mensaje}
   } catch (error) {
     console.error("Error al enviar el correo:", error);
     return NextResponse.json(
-      { error: "Error interno del servidor. No se pudo enviar el correo." },
+      { error: `Error del servidor: ${error.message || error}` },
       { status: 500 }
     );
   }
