@@ -36,7 +36,7 @@ export async function POST(request) {
 
     // Contenido del correo en texto plano y HTML
     const mailOptions = {
-      from: `"${nombre}" <${process.env.EMAIL_FROM}>`,
+      from: `"Elcco Group Website" <${process.env.EMAIL_FROM}>`,
       replyTo: email,
       to: process.env.EMAIL_TO,
       subject: `Nuevo mensaje de contacto: ${servicio} - ${empresa || nombre}`,
